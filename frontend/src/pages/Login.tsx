@@ -22,6 +22,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>
 
 export default function Login() {
+  console.log('login')
   const {
     register,
     handleSubmit,

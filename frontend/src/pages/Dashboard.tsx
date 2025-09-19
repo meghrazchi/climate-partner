@@ -87,7 +87,7 @@ export default function Dashboard() {
         field: 'createdAt',
         headerName: 'Created',
         flex: 1,
-        valueFormatter: (p) => fmtDateTime(p.value as string | undefined),
+        valueFormatter: (p) => fmtDateTime(p as string | undefined),
         sortComparator: (a: unknown, b: unknown) =>
           new Date(String(a)).getTime() - new Date(String(b)).getTime(),
       },
@@ -98,7 +98,7 @@ export default function Dashboard() {
         headerName: 'Distance (km)',
         type: 'number',
         flex: 0.9,
-        valueFormatter: (p) => safeNum(p.value, 0).toFixed(0),
+        valueFormatter: (p) => safeNum(p, 0).toFixed(0),
       },
       { field: 'mode', headerName: 'Mode', flex: 0.7 },
       {
@@ -106,7 +106,7 @@ export default function Dashboard() {
         headerName: 'Emissions (kg CO₂e)',
         type: 'number',
         flex: 1,
-        valueFormatter: (p) => safeNum(p.value, 0).toFixed(3),
+        valueFormatter: (p) => safeNum(p, 0).toFixed(3),
       },
     ],
     []
@@ -138,7 +138,7 @@ export default function Dashboard() {
       </Grid>
 
       {/* Chart */}
-      <Grid item xs={12} md={7}>
+      <Grid>
         <Card sx={{ height: 300 }}>
           <CardContent sx={{ height: '100%' }}>
             <Typography variant="h6" gutterBottom>
@@ -158,7 +158,7 @@ export default function Dashboard() {
       </Grid>
 
       {/* Add Trip + Trips list (same card) */}
-      <Grid item xs={12}>
+      <Grid>
         <Card>
           <CardContent>
             <Typography variant="h6" gutterBottom>

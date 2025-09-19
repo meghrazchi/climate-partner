@@ -73,7 +73,7 @@ export default function Home() {
       {/* Hero */}
       <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
         <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={7}>
+          <Grid  size={{ xs: 12, md: 7 }}>
             <Stack spacing={2} component={motion.div} {...fadeInUp}>
               <Chip
                 icon={<Sparkles size={16} />}
@@ -139,7 +139,7 @@ export default function Home() {
             </Stack>
           </Grid>
 
-          <Grid item xs={12} md={5}>
+          <Grid  size={{ xs: 12, md: 5 }}>
             <MotionCard
               elevation={0}
               sx={{
@@ -254,7 +254,7 @@ export default function Home() {
 
         <Grid container spacing={2}>
           {features.map((f, i) => (
-            <Grid item xs={12} sm={6} md={3} key={f.title}>
+            <Grid size={{ xs: 12, md: 4, sm:6 }} key={f.title}>
               <MotionCard
                 elevation={0}
                 sx={{ borderRadius: 3, border: '1px solid', borderColor: 'divider', height: '100%' }}
@@ -287,7 +287,7 @@ export default function Home() {
         </Typography>
         <Grid container spacing={2}>
           {steps.map((s, i) => (
-            <Grid item xs={12} md={4} key={s.step}>
+            <Grid size={{ xs: 12, md: 4 }} key={s.step}>
               <MotionCard
                 elevation={0}
                 sx={{ borderRadius: 3, border: '1px solid', borderColor: 'divider', height: '100%' }}
