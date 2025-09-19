@@ -24,7 +24,7 @@ export function setupSwagger(app: INestApplication) {
     // deepScanRoutes: true, // useful if you have lazy-loaded modules
   });
 
-  SwaggerModule.setup('api', app, document, {
+  SwaggerModule.setup('v1/api', app, document, {
     swaggerOptions: {
       persistAuthorization: true, // keeps token on page reload
       docExpansion: 'none',
